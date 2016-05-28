@@ -1,0 +1,10 @@
+{
+    "name": "fcc-timestamp",
+    "description": "timestamp microservice made for fcc basejump",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+    }
+}

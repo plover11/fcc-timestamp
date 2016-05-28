@@ -30,11 +30,23 @@ var server = http.createServer(function(req, res){
             natural: datestr
         }
         
-        res.writeHead(200, { 'Content-Type': 'application/json'});
+        
         //res.json(dateobj);
         //res.write(dateobj);
         //dateobj.pipe(res);
         //req.pipe(res);
+        var a = JSON.stringify(dateobj);
+        var len = a.length;
+        console.log(len);
+        console.log(a);
+        console.log(typeof a);
+        console.log(typeof dateobj);
+        console.log(typeof (typeof dateobj));
+        //console.log(req.headers);
+        res.writeHead(200, { 'Content-Type': 'application/json', 'Content-Length': len, 
+        "Access-Control-Allow-Headers":"Origin, X-Requested-With, Content-Type, Accept",
+            "Access-Control-Allow-Origin":"*"
+        });
         res.end(JSON.stringify(dateobj));
     }
 

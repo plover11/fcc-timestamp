@@ -30,7 +30,11 @@ var server = http.createServer(function(req, res){
             natural: datestr
         }
         
-        res.writeHead(200, { 'Content-Type': 'document'});
+        res.writeHead(200, { 'Content-Type': 'application/json'});
+        //res.json(dateobj);
+        //res.write(dateobj);
+        //dateobj.pipe(res);
+        //req.pipe(res);
         res.end(JSON.stringify(dateobj));
     }
 

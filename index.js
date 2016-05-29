@@ -8,7 +8,7 @@ var server = http.createServer(function(req, res){
         var query = req.url.slice(1).replace(/%20/g, " ");
         if (query.length <1){
             res.writeHead(200, {'content-type': 'text/html'})
-            res.end("api usage: add / then add a natural language date (e.g. March 14, 1592) or a unix timestamp (e.g -11922249600). Response format is JSON. <br> Github: https://github.com/plover11/fcc-timestamp")
+            res.end("<title>Timestamp microservice</title>API usage: url/ then add a natural language date (e.g. March 14, 1592) or a unix timestamp (e.g -11922249600). <br>A valid query returns JSON containing both unix timestamp and natural language date of given string. <br> Examples: https://fccts.herokuapp.com/march%2014%1592, https://fccts.herokuapp.com/-11922249600 <br> JSON: { unix: -11922249600, \"natural\": \"March 1, 1592\" } <br><a href=\"https://github.com/plover11/fcc-timestamp\">View GitHub</a>");
         }
         
         var nd; //convert query to new Date
